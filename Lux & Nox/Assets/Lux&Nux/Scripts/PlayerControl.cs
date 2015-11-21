@@ -4,12 +4,9 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour
 {
 
-<<<<<<< HEAD
-=======
     public string HorizontalKey, JumpKey;
 
 
->>>>>>> e089eec922ae05af84192f2d0a9cc7597f417a7a
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
