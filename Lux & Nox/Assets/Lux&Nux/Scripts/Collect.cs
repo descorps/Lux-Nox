@@ -6,7 +6,7 @@ public class Collect : MonoBehaviour {
 	private Item item;
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.layer == LayerMask.NameToLayer ("Player")) {
+		if (other.gameObject.tag == "Player") {
 			Item playerItem = other.GetComponentInChildren<Item>();
 			if (playerItem == null) {
 				transform.parent = other.gameObject.transform;
