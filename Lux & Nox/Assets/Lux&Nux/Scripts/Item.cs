@@ -5,6 +5,8 @@ public class Item : MonoBehaviour {
 
 	[SerializeField]
 	public ItemType itemType;
+	[SerializeField]
+	public float valuePerSecond;
 
 	// Use this for initialization
 	void Start () {
