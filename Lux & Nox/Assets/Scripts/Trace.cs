@@ -8,7 +8,9 @@ public class Trace : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        // Destroy(gameObject); // TODO use Pooling
+        if (other.CompareTag("Player")) {
+            Destroy(gameObject); // TODO use Pooling
+        }
     }
 
     void OnTriggerStay2D(Collider2D other) {
