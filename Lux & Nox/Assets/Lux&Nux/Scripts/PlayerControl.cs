@@ -3,6 +3,10 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
+
+    public string HorizontalKey, JumpKey;
+
+
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
@@ -51,7 +55,7 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && grounded)
+		if(Input.GetButtonDown(JumpKey) && grounded)
 			jump = true;
 
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
@@ -63,7 +67,7 @@ public class PlayerControl : MonoBehaviour
 	void FixedUpdate ()
 	{
 		// Cache the horizontal input.
-		float h = Input.GetAxis("Horizontal");
+		float h = Input.GetAxis(HorizontalKey);
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
 		//anim.SetFloat("Speed", Mathf.Abs(h));
