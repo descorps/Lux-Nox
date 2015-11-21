@@ -8,7 +8,7 @@ public class Trace : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        Destroy(gameObject); // TODO use Pooling
+        // Destroy(gameObject); // TODO use Pooling
     }
 
     void OnTriggerStay2D(Collider2D other) {
