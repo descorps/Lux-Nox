@@ -55,7 +55,7 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButton(JumpKey) && grounded)
+		if(Input.GetButtonDown(JumpKey) && grounded)
 			jump = true;
 		
 		if (Input.GetButtonDown(DashLeftKey)) {
@@ -77,7 +77,7 @@ public class PlayerControl : MonoBehaviour
 	
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if (/*(h * GetComponent<Rigidbody2D> ().velocity.x <= maxSpeed)*/ Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) <= maxSpeed && (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)) {
+		if (/*(h * GetComponent<Rigidbody2D> ().velocity.x <= maxSpeed)*/ Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) <= maxSpeed /*&& (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)*/) {
 			// ... add a force to the player.
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.right * h * moveForce);
 		}
@@ -89,12 +89,12 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		// If the player doesn't press the button, the character stops moving instantaneously
-		else if ((Mathf.Abs (h) <= 0.30f) && (!dashLeft) && (!dashRight)) {
+		/*else if ((Mathf.Abs (h) <= 0.30f) && (!dashLeft) && (!dashRight)) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
-		}
+		}*/
 
 		// If the player should jump...
-		if(jump)
+		if(jump && GetComponent<Rigidbody2D>().velocity.y == 0)
 		{
 			// Set the Jump animator trigger parameter.
 			//anim.SetTrigger("Jump");
