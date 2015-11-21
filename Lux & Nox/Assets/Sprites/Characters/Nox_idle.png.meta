@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3c91a148583332d4294fc9bd33a148ab
-timeCreated: 1448117646
+timeCreated: 1448126379
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,8 +59,8 @@ TextureImporter:
     - name: Nox_idle_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 36
+        x: 0
+        y: 33
         width: 31
         height: 31
       alignment: 0
@@ -69,8 +69,8 @@ TextureImporter:
     - name: Nox_idle_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 36
+        x: 32
+        y: 33
         width: 31
         height: 31
       alignment: 0
@@ -79,8 +79,8 @@ TextureImporter:
     - name: Nox_idle_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 37
+        x: 65
+        y: 34
         width: 29
         height: 29
       alignment: 0
@@ -89,8 +89,8 @@ TextureImporter:
     - name: Nox_idle_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
+        x: 1
+        y: 2
         width: 29
         height: 29
       alignment: 0
@@ -99,8 +99,8 @@ TextureImporter:
     - name: Nox_idle_4
       rect:
         serializedVersion: 2
-        x: 36
-        y: 3
+        x: 33
+        y: 2
         width: 29
         height: 29
       alignment: 0
@@ -109,8 +109,8 @@ TextureImporter:
     - name: Nox_idle_5
       rect:
         serializedVersion: 2
-        x: 70
-        y: 3
+        x: 65
+        y: 2
         width: 29
         height: 29
       alignment: 0
