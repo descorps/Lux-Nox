@@ -13,11 +13,13 @@ public class collisionDash : MonoBehaviour {
 			}
 			else if (playerItem.itemType == ItemType.FAKEOBJECT && otherItem != null) {
 				playerItem.transform.parent = null;
+				playerItem.transform.localScale *= 2;
 				otherItem.transform.parent = transform.parent.transform;
 				otherItem.transform.localPosition = new Vector3 (0, 0.8f, 0);
 			} 
 			else if (playerItem.itemType == ItemType.TOPOBJECT && otherItem != null) {
 				otherItem.transform.parent = null;
+				otherItem.transform.localScale *= 2;
 			}
 		} 
 	}
