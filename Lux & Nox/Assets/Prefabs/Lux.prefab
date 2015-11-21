@@ -285,13 +285,11 @@ MonoBehaviour:
   dashLeft: 0
   dashRight: 0
   dashCooldownRate: .5
-  airDashesRemaining: 2
   dashForce: 50
   moveForce: 365
   maxSpeed: 5
   jumpClips: []
-  jumpForceX: 500
-  jumpForceY: 500
+  jumpForce: 255
   taunts: []
   tauntProbability: 50
   tauntDelay: 1

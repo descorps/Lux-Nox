@@ -926,7 +926,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2375694, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_Enabled
@@ -1408,18 +1408,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 2375694, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.25158381
-      objectReference: {fileID: 0}
-    - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .543906033
-      objectReference: {fileID: 0}
     - target: {fileID: 138480, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_Name
       value: Balcon (12)
@@ -1522,7 +1510,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2375694, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_Enabled
