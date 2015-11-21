@@ -1,11 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-
-    public string HorizontalKey, JumpKey;
-
+	public string HorizontalKey, JumpKey;
 
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.

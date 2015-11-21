@@ -1,1 +1,1 @@
-﻿public enum PlayerName { LUX, NOX };
+public enum PlayerName { LUX, NOX };
