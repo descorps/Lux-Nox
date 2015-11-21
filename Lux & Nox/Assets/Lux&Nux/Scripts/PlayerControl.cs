@@ -17,8 +17,8 @@ public class PlayerControl : MonoBehaviour
 	
 	[SerializeField]
 	private float dashCooldownRate = 0.5f;	// Cooldown for dashes.
-	[SerializeField]
-	private int airDashesRemaining = 2;		// Number of dashes remaining in the air.
+	//[SerializeField]
+	//private int airDashesRemaining = 2;		// Number of dashes remaining in the air.
 	[SerializeField]
 	private float dashForce = 50f;			// Force of a dash.
 
@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
-	public float jumpForce = 500f;			// Amount of force added when the player jumps.
+	public float jumpForce = 260f;			// Amount of force added when the player jumps.
 	public AudioClip[] taunts;				// Array of clips for when the player taunts.
 	public float tauntProbability = 50f;	// Chance of a taunt happening.
 	public float tauntDelay = 1f;			// Delay for when the taunt should happen.
@@ -55,7 +55,7 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown(JumpKey) && grounded)
+		if(Input.GetButton(JumpKey) && grounded)
 			jump = true;
 		
 		if (Input.GetButtonDown(DashLeftKey)) {
@@ -77,23 +77,20 @@ public class PlayerControl : MonoBehaviour
 	
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if ((h * GetComponent<Rigidbody2D> ().velocity.x < maxSpeed) && (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)) {
+		if (/*(h * GetComponent<Rigidbody2D> ().velocity.x <= maxSpeed)*/ Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) <= maxSpeed && (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)) {
 			// ... add a force to the player.
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.right * h * moveForce);
-			//Debug.Log ("1");
 		}
 
 		// If the player's horizontal velocity is greater than the maxSpeed...
 		else if (Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) > maxSpeed && !dashRight && !dashLeft) {
 			// ... set the player's velocity to the maxSpeed in the x axis.
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (Mathf.Sign (GetComponent<Rigidbody2D> ().velocity.x) * maxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
-			//Debug.Log ("2");
 		}
 
 		// If the player doesn't press the button, the character stops moving instantaneously
 		else if ((Mathf.Abs (h) <= 0.30f) && (!dashLeft) && (!dashRight)) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
-			//Debug.Log ("3");
 		}
 
 		// If the player should jump...
@@ -105,32 +102,31 @@ public class PlayerControl : MonoBehaviour
 			// Play a random jump audio clip.
 			//int i = Random.Range(0, jumpClips.Length);
 			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
-			
+
+
 			// Add a vertical force to the player.
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
-			
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce * h, jumpForce));
+
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
 			
 			if(dashLeft) {
-				if(dashTimeStamp + dashCooldownRate < Time.time && airDashesRemaining > 0) {
+				if(dashTimeStamp + dashCooldownRate < Time.time /*&& airDashesRemaining > 0*/) {
 					dashTimeStamp = Time.time;
-					airDashesRemaining--;
+					//airDashesRemaining--;
 					// Add a force to the player aiming for the mouse position.
 					GetComponent<Rigidbody2D>().AddForce(new Vector2 (- dashForce, 0), ForceMode2D.Impulse);
-					//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
 				} else {
 					dashLeft = false;
 				}
 			}
 			
 			if(dashRight) {
-				if(dashTimeStamp + dashCooldownRate < Time.time && airDashesRemaining > 0) {
+				if(dashTimeStamp + dashCooldownRate < Time.time /*&& airDashesRemaining > 0*/) {
 					dashTimeStamp = Time.time;
-					airDashesRemaining--;
+					//airDashesRemaining--;
 					// Add a force to the player aiming for the mouse position.
 					GetComponent<Rigidbody2D>().AddForce(new Vector2 (dashForce, 0), ForceMode2D.Impulse);
-					//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
 				} else {
 					dashRight = false;
 				}
@@ -142,7 +138,6 @@ public class PlayerControl : MonoBehaviour
 				dashTimeStamp = Time.time;
 				// Add a force to the player aiming for the mouse position.
 				GetComponent<Rigidbody2D>().AddForce (new Vector2 (- dashForce, 0), ForceMode2D.Impulse);
-				//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
 			} else {
 				dashLeft = false;
 			}
@@ -153,7 +148,6 @@ public class PlayerControl : MonoBehaviour
 				dashTimeStamp = Time.time;
 				// Add a force to the player aiming for the mouse position.
 				GetComponent<Rigidbody2D>().AddForce (new Vector2 (dashForce, 0), ForceMode2D.Impulse);
-				//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
 			} else {
 				dashRight = false;
 			}
@@ -170,8 +164,8 @@ public class PlayerControl : MonoBehaviour
 
 
 	}
-	
-	
+
+
 	void Flip ()
 	{
 		// Switch the way the player is labelled as facing.

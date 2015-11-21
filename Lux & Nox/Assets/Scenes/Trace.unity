@@ -647,16 +647,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalKey: Horizontal1
   JumpKey: Jump1
+  DashLeftKey: LeftDash1
+  DashRightKey: RightDash1
   facingRight: 1
   jump: 0
-  dash: 0
+  dashLeft: 0
+  dashRight: 0
   dashCooldownRate: .5
-  airDashesRemaining: 2
-  dashForce: 1000
-  moveForce: 365
+  dashForce: 50
+  moveForce: 750
   maxSpeed: 5
   jumpClips: []
-  jumpForce: 750
+  jumpForceX: 260
+  jumpForceY: 260
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
@@ -687,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36955317396a9f48b0041191de2012b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: .00999999978
+  speedFactor: .0399999991
 --- !u!114 &960086858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,16 +1007,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalKey: Horizontal2
   JumpKey: Jump2
+  DashLeftKey: LeftDash2
+  DashRightKey: RightDash2
   facingRight: 1
   jump: 0
-  dash: 0
+  dashLeft: 0
+  dashRight: 0
   dashCooldownRate: .5
-  airDashesRemaining: 2
-  dashForce: 1000
-  moveForce: 365
+  dashForce: 50
+  moveForce: 750
   maxSpeed: 5
   jumpClips: []
-  jumpForce: 750
+  jumpForceX: 500
+  jumpForceY: 10
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
@@ -1058,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36955317396a9f48b0041191de2012b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: .00999999978
+  speedFactor: .0399999991
 --- !u!1 &1654626660
 GameObject:
   m_ObjectHideFlags: 0
