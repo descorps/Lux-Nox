@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-	public string HorizontalKey, JumpKey, DashLeftKey, DashRightKey;
+	public string HorizontalKey, JumpKey, DashLeftKey, DashRightKey, VerticalKey;
     
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
@@ -52,19 +52,23 @@ public class PlayerControl : MonoBehaviour
 	void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"))
+			|| Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Platform"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButton(JumpKey) && grounded)
+		if(Input.GetButtonDown(JumpKey) && grounded)
 			jump = true;
-		
-		if (Input.GetButtonDown(DashLeftKey)) {
+		if (Input.GetButtonDown(DashLeftKey)) 
 			dashLeft = true;
-		}
-		if (Input.GetButtonDown(DashRightKey)) {
+		if (Input.GetButtonDown(DashRightKey)) 
 			dashRight = true;
-		}
-    }
+
+		/*if (Input.GetAxis (VerticalKey) < 0) {
+			Physics2D.IgnoreLayerCollision (gameObject.layer, LayerMask.NameToLayer ("Platform"), true);
+		} else {
+			Physics2D.IgnoreLayerCollision (gameObject.layer, LayerMask.NameToLayer ("Platform"), false);
+		}*/
+	}
 
 
 	void FixedUpdate ()
@@ -77,7 +81,7 @@ public class PlayerControl : MonoBehaviour
 	
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if (/*(h * GetComponent<Rigidbody2D> ().velocity.x <= maxSpeed)*/ Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) <= maxSpeed && (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)) {
+		if (/*(h * GetComponent<Rigidbody2D> ().velocity.x <= maxSpeed)*/ Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) <= maxSpeed /*&& (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)*/) {
 			// ... add a force to the player.
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.right * h * moveForce);
 		}
@@ -89,12 +93,12 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		// If the player doesn't press the button, the character stops moving instantaneously
-		else if ((Mathf.Abs (h) <= 0.30f) && (!dashLeft) && (!dashRight)) {
+		/*else if ((Mathf.Abs (h) <= 0.30f) && (!dashLeft) && (!dashRight)) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
-		}
+		}*/
 
 		// If the player should jump...
-		if(jump)
+		if(jump && GetComponent<Rigidbody2D>().velocity.y == 0)
 		{
 			// Set the Jump animator trigger parameter.
 			//anim.SetTrigger("Jump");
@@ -161,8 +165,6 @@ public class PlayerControl : MonoBehaviour
 		else if(h < 0 && facingRight)
 			// ... flip the player.
 			Flip();
-
-
 	}
 
 
@@ -177,41 +179,4 @@ public class PlayerControl : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
-
-	public IEnumerator Taunt()
-	{
-		// Check the random chance of taunting.
-		float tauntChance = Random.Range(0f, 100f);
-		if(tauntChance > tauntProbability)
-		{
-			// Wait for tauntDelay number of seconds.
-			yield return new WaitForSeconds(tauntDelay);
-
-			// If there is no clip currently playing.
-			/*if(!GetComponent<AudioSource>().isPlaying)
-			{
-				// Choose a random, but different taunt.
-				tauntIndex = TauntRandom();
-
-				// Play the new taunt.
-				GetComponent<AudioSource>().clip = taunts[tauntIndex];
-				GetComponent<AudioSource>().Play();
-			}*/
-		}
-	}
-
-	/*
-	int TauntRandom()
-	{
-		// Choose a random index of the taunts array.
-		int i = Random.Range(0, taunts.Length);
-
-		// If it's the same as the previous taunt...
-		if(i == tauntIndex)
-			// ... try another random taunt.
-			return TauntRandom();
-		else
-			// Otherwise return this index.
-			return i;
-	}*/
 }
