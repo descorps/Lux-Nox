@@ -114,7 +114,7 @@ Transform:
   - {fileID: 690351093}
   - {fileID: 698376938}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &172450003
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960086856}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!58 &172450005
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960086856}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!23 &645220528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -490,12 +490,11 @@ Transform:
   m_LocalPosition: {x: -16, y: -2.8499999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1444347947}
   - {fileID: 645220527}
   - {fileID: 1208842871}
   - {fileID: 172450004}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &960086857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +659,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960086856}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1444347942
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +720,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -742,10 +741,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444347942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.8499999, z: -10}
+  m_LocalPosition: {x: -8.02000046, y: 3.8499999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 960086856}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1541713385
 GameObject:
@@ -837,7 +836,7 @@ Transform:
   - {fileID: 1149664719}
   - {fileID: 327777581}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1541713390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,4 +1055,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
