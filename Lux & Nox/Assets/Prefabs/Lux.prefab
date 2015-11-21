@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36955317396a9f48b0041191de2012b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: .00999999978
+  speedFactor: .0149999997
 --- !u!114 &11458666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,14 +284,12 @@ MonoBehaviour:
   jump: 0
   dashLeft: 0
   dashRight: 0
-  dashCooldownRate: .5
-  airDashesRemaining: 2
-  dashForce: 50
+  dashCooldownRate: .800000012
+  dashForce: 85
   moveForce: 365
   maxSpeed: 5
   jumpClips: []
-  jumpForceX: 500
-  jumpForceY: 500
+  jumpForce: 750
   taunts: []
   tauntProbability: 50
   tauntDelay: 1

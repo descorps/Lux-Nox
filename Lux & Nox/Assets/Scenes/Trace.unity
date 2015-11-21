@@ -128,18 +128,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 2375694, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.25158381
-      objectReference: {fileID: 0}
-    - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .543906033
-      objectReference: {fileID: 0}
     - target: {fileID: 138480, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_Name
       value: Balcon (7)
@@ -726,23 +714,23 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22488026, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .377999991
       objectReference: {fileID: 0}
     - target: {fileID: 22488026, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22487884, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: .377999991
       objectReference: {fileID: 0}
     - target: {fileID: 22487884, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .377999991
       objectReference: {fileID: 0}
     - target: {fileID: 22487884, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22441608, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_LocalPosition.x
@@ -818,23 +806,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22462888, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .592000008
       objectReference: {fileID: 0}
     - target: {fileID: 22462888, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22472802, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: .592000008
       objectReference: {fileID: 0}
     - target: {fileID: 22472802, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .592000008
       objectReference: {fileID: 0}
     - target: {fileID: 22472802, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
@@ -926,7 +914,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2375694, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_Enabled
@@ -1408,18 +1396,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 2375694, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.25158381
-      objectReference: {fileID: 0}
-    - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .543906033
-      objectReference: {fileID: 0}
     - target: {fileID: 138480, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_Name
       value: Balcon (12)
@@ -1522,7 +1498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489878, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2375694, guid: e548b2a6887281f49adfb537f76f045f, type: 2}
       propertyPath: m_Enabled
