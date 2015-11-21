@@ -296,7 +296,7 @@ MonoBehaviour:
   dash: 0
   dashCooldownRate: .5
   airDashesRemaining: 2
-  dashForce: 1000
+  dashForce: 50
   moveForce: 365
   maxSpeed: 5
   jumpClips: []
