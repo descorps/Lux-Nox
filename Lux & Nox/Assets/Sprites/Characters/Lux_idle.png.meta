@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 026894cf115dff745973b9bfdb1ef2a5
-timeCreated: 1448126349
+timeCreated: 1448138779
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,8 +59,8 @@ TextureImporter:
     - name: Lux_idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 33
+        x: 3
+        y: 42
         width: 31
         height: 31
       alignment: 0
@@ -69,8 +69,8 @@ TextureImporter:
     - name: Lux_idle_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 33
+        x: 41
+        y: 42
         width: 31
         height: 31
       alignment: 0
@@ -79,8 +79,8 @@ TextureImporter:
     - name: Lux_idle_2
       rect:
         serializedVersion: 2
-        x: 65
-        y: 34
+        x: 80
+        y: 43
         width: 29
         height: 29
       alignment: 0
@@ -89,8 +89,8 @@ TextureImporter:
     - name: Lux_idle_3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
+        x: 4
+        y: 5
         width: 29
         height: 29
       alignment: 0
@@ -99,8 +99,8 @@ TextureImporter:
     - name: Lux_idle_4
       rect:
         serializedVersion: 2
-        x: 33
-        y: 2
+        x: 42
+        y: 5
         width: 29
         height: 29
       alignment: 0
@@ -109,8 +109,8 @@ TextureImporter:
     - name: Lux_idle_5
       rect:
         serializedVersion: 2
-        x: 65
-        y: 2
+        x: 80
+        y: 5
         width: 29
         height: 29
       alignment: 0
