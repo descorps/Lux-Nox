@@ -222,6 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 1
   jump: 0
+  dash: 0
+  dashCooldownRate: .5
+  airDashesRemaining: 2
+  dashForce: 50
   moveForce: 365
   maxSpeed: 5
   jumpClips: []

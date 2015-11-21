@@ -66,27 +66,67 @@ public class PlayerControl : MonoBehaviour
 		float h = Input.GetAxis("Horizontal");
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
 		//anim.SetFloat("Speed", Mathf.Abs(h));
+	
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if ((h * GetComponent<Rigidbody2D> ().velocity.x < maxSpeed)) {
-		    //&& (Mathf.Abs (h) > 0.30f) && (!dash)) {
+		if ((h * GetComponent<Rigidbody2D> ().velocity.x < maxSpeed) && (Mathf.Abs (h) > 0.30f) && (!dash)) {
 			// ... add a force to the player.
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.right * h * moveForce);
 			//Debug.Log ("1");
 		}
 
 		// If the player's horizontal velocity is greater than the maxSpeed...
-		else if (Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) > maxSpeed) {
+		else if (Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) > maxSpeed && !dash) {
 			// ... set the player's velocity to the maxSpeed in the x axis.
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (Mathf.Sign (GetComponent<Rigidbody2D> ().velocity.x) * maxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 			//Debug.Log ("2");
 		}
 
 		// If the player doesn't press the button, the character stops moving instantaneously
-		//else if ((Mathf.Abs (h) <= 0.30f) && (!dash)) {
-		//	GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
+		else if ((Mathf.Abs (h) <= 0.30f) && (!dash)) {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
 			//Debug.Log ("3");
-		//}
+		}
+
+		// If the player should jump...
+		if(jump)
+		{
+			// Set the Jump animator trigger parameter.
+			//anim.SetTrigger("Jump");
+			
+			// Play a random jump audio clip.
+			//int i = Random.Range(0, jumpClips.Length);
+			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+			
+			// Add a vertical force to the player.
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+			
+			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
+			jump = false;
+			
+			if(dash) {
+				if(dashTimeStamp + dashCooldownRate < Time.time && airDashesRemaining > 0) {
+					dashTimeStamp = Time.time;
+					airDashesRemaining--;
+					// Add a force to the player aiming for the mouse position.
+					GetComponent<Rigidbody2D>().AddForce(new Vector2 (Mathf.Sign(Input.mousePosition.x - Screen.width / 2) * dashForce, 0), ForceMode2D.Impulse);
+					//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
+				} else {
+					dash = false;
+				}
+			}
+		}
+		
+		if(dash) {
+			if(dashTimeStamp + dashCooldownRate < Time.time) {
+				dashTimeStamp = Time.time;
+				// Add a force to the player aiming for the mouse position.
+				GetComponent<Rigidbody2D>().AddForce (new Vector2 (Mathf.Sign(Input.mousePosition.x - Screen.width / 2) * dashForce, 0), ForceMode2D.Impulse);
+				//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
+			} else {
+				dash = false;
+			}
+		}
 
 		// If the input is moving the player right and the player is facing left...
 		if(h > 0 && !facingRight)
@@ -97,43 +137,7 @@ public class PlayerControl : MonoBehaviour
 			// ... flip the player.
 			Flip();
 
-		// If the player should jump...
-		if(jump)
-		{
-			// Set the Jump animator trigger parameter.
-			//anim.SetTrigger("Jump");
 
-			// Play a random jump audio clip.
-			//int i = Random.Range(0, jumpClips.Length);
-			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
-
-			// Add a vertical force to the player.
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
-
-			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
-			jump = false;
-
-			if(dash) {
-				if(dashTimeStamp + dashCooldownRate < Time.time && airDashesRemaining > 0) {
-					dashTimeStamp = Time.time;
-					airDashesRemaining--;
-					// Add a force to the player aiming for the mouse position.
-					GetComponent<Rigidbody2D>().AddForce(new Vector2 (Mathf.Sign(Input.mousePosition.x - Screen.width / 2) * dashForce, 0), ForceMode2D.Impulse);
-					//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
-				} else
-					dash = false;
-			}
-		}
-
-		if(dash) {
-			if(dashTimeStamp + dashCooldownRate < Time.time) {
-				dashTimeStamp = Time.time;
-				// Add a force to the player aiming for the mouse position.
-				GetComponent<Rigidbody2D>().AddForce (new Vector2 (Mathf.Sign(Input.mousePosition.x - Screen.width / 2) * dashForce, 0), ForceMode2D.Impulse);
-				//Debug.Log(GetComponent<Rigidbody2D> ().velocity.x);
-			} else
-				dash = false;
-		}
 	}
 	
 	
