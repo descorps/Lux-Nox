@@ -12,13 +12,13 @@ public class PlayerControl : MonoBehaviour
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
-	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
+	public float jumpForce = 500f;			// Amount of force added when the player jumps.
 	public AudioClip[] taunts;				// Array of clips for when the player taunts.
 	public float tauntProbability = 50f;	// Chance of a taunt happening.
 	public float tauntDelay = 1f;			// Delay for when the taunt should happen.
 
 
-	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
+	//private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	//private Animator anim;					// Reference to the player's animator component.
@@ -40,6 +40,13 @@ public class PlayerControl : MonoBehaviour
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if(Input.GetButtonDown("Jump") && grounded)
 			jump = true;
+
+        if (GetComponent<Rigidbody2D> ().velocity.y > 10) {
+			GetComponent<CircleCollider2D> ().enabled = false;
+		} 
+		else {
+			GetComponent<CircleCollider2D> ().enabled = true;
+		}
 	}
 
 
@@ -123,7 +130,7 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
-
+	/*
 	int TauntRandom()
 	{
 		// Choose a random index of the taunts array.
@@ -136,5 +143,5 @@ public class PlayerControl : MonoBehaviour
 		else
 			// Otherwise return this index.
 			return i;
-	}
+	}*/
 }
