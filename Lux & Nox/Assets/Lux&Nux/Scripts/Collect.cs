@@ -12,7 +12,7 @@ public class Collect : MonoBehaviour {
 				transform.parent = other.gameObject.transform;
 				transform.localPosition = new Vector3(0,0.8f,0);
 			}
-			else if (item.itemType > playerItem.itemType) {
+			else if (playerItem.itemType == ItemType.FAKEOBJECT && item.itemType == ItemType.TOPOBJECT) {
 				playerItem.transform.parent = null;
 				this.transform.parent = other.gameObject.transform;
 				this.transform.localPosition = new Vector3(0,0.8f,0);
