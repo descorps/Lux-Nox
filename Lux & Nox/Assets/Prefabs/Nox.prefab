@@ -266,7 +266,8 @@ MonoBehaviour:
   moveForce: 365
   maxSpeed: 5
   jumpClips: []
-  jumpForce: 1000
+  jumpForceX: 500
+  jumpForceY: 500
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
