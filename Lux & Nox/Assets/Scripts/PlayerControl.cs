@@ -48,11 +48,14 @@ public class PlayerControl : MonoBehaviour
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
 
-		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		//anim.SetFloat("Speed", Mathf.Abs(h));
+        // The Speed animator parameter is set to the absolute value of the horizontal input.
+        //anim.SetFloat("Speed", Mathf.Abs(h));
 
-		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
+        if (Mathf.Approximately(h, 0))
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+
+        // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
+        else if(h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
 			// ... add a force to the player.
 			GetComponent<Rigidbody2D>().AddForce(Vector2.right * h * moveForce);
 
