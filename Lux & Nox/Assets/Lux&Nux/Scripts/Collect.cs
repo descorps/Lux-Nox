@@ -6,7 +6,7 @@ public class Collect : MonoBehaviour {
 	private Item item;
 
 	void OnTriggerEnter2D(Collider2D other) {
-		//if (other.gameObject.tag == "Player") {
+		if (other.gameObject.tag == "Player") {
 			Item playerItem = other.GetComponentInChildren<Item>();
 			if (playerItem == null) {
 				transform.parent = other.gameObject.transform;
@@ -17,7 +17,7 @@ public class Collect : MonoBehaviour {
 				this.transform.parent = other.gameObject.transform;
 				this.transform.localPosition = new Vector3(0,0.8f,0);
 			}
-		//}
+		}
 	}
 
 	// Use this for initialization

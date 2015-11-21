@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 
 public class Trace : MonoBehaviour {
-    
-	void Start() {}
 
-    void OnTriggerEnter2D(Collider2D other) {
+    [SerializeField]
+    float time = 5;
+
+	void Start() {
+        Invoke("AutoDestroy", time);
     }
 
+    void AutoDestroy() {
+        Destroy(gameObject); // TODO use Pooling
+    }
+    
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            Destroy(gameObject); // TODO use Pooling
+            AutoDestroy();
         }
-    }
-
-    void OnTriggerStay2D(Collider2D other) {
-        // other.attachedRigidbody.AddForce(other.attachedRigidbody.velocity*10);
     }
 }
