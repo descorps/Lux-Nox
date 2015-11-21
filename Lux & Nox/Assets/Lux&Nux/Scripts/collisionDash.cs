@@ -4,7 +4,9 @@ using System.Collections;
 public class collisionDash : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D other) {
-		if (transform.parent.GetComponent<PlayerControl>().dash && other.tag == "Player"){
+		if ((transform.parent.GetComponent<PlayerControl>().dashLeft 
+		     || transform.parent.GetComponent<PlayerControl>().dashRight) 
+		    && other.tag == "Player"){
 			Item playerItem = transform.parent.GetComponentInChildren<Item> ();
 			Item otherItem = other.GetComponentInChildren<Item> ();
 			if(playerItem == null) {

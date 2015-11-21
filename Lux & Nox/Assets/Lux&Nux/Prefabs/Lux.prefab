@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 474182}
   - 58: {fileID: 5898942}
+  - 114: {fileID: 11463528}
   m_Layer: 14
   m_Name: traceChecker
   m_TagString: Untagged
@@ -208,7 +209,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .600000024
+  m_Radius: .5
 --- !u!58 &5898942
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -291,9 +292,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalKey: Horizontal2
   JumpKey: Jump2
+  DashLeftKey: LeftDash2
+  DashRightKey: RightDash2
   facingRight: 1
   jump: 0
-  dash: 0
+  dashLeft: 0
+  dashRight: 0
   dashCooldownRate: .5
   airDashesRemaining: 2
   dashForce: 50
@@ -304,6 +308,17 @@ MonoBehaviour:
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
+--- !u!114 &11463528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03537174c31aebd4095b896e5a47dd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11470146
 MonoBehaviour:
   m_ObjectHideFlags: 1
