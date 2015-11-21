@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &102834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 474182}
+  - 58: {fileID: 5898942}
+  m_Layer: 14
+  m_Name: traceChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &104596
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,9 +28,11 @@ GameObject:
   - 50: {fileID: 5006320}
   - 58: {fileID: 5860840}
   - 114: {fileID: 11403378}
-  m_Layer: 9
+  - 114: {fileID: 11470146}
+  - 114: {fileID: 11451774}
+  m_Layer: 13
   m_Name: Lux
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +46,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 412028}
   - 108: {fileID: 10874676}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +63,7 @@ GameObject:
   - 4: {fileID: 428862}
   - 33: {fileID: 3381226}
   - 23: {fileID: 2388316}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +78,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494096}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,8 +122,21 @@ Transform:
   - {fileID: 428862}
   - {fileID: 494096}
   - {fileID: 412028}
+  - {fileID: 474182}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &474182
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433788}
+  m_RootOrder: 3
 --- !u!4 &494096
 Transform:
   m_ObjectHideFlags: 1
@@ -178,6 +209,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .5
+--- !u!58 &5898942
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102834}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .5
 --- !u!108 &10874676
 Light:
   m_ObjectHideFlags: 1
@@ -222,6 +266,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 0
+--- !u!114 &11451774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36955317396a9f48b0041191de2012b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedFactor: .00999999978
 --- !u!114 &11458666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,8 +289,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6804babace5cc47dd8b61abb292c4be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HorizontalKey: Horizontal2
+  JumpKey: Jump2
   facingRight: 1
   jump: 0
+  dash: 0
+  dashCooldownRate: .5
+  airDashesRemaining: 2
+  dashForce: 1000
   moveForce: 365
   maxSpeed: 5
   jumpClips: []
@@ -242,6 +304,19 @@ MonoBehaviour:
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
+--- !u!114 &11470146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a6665f17eb7ec429fc63435fd989f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  traceChecker: {fileID: 102834}
+  trace: {fileID: 144374, guid: 483a815be7d6b5a4f93dc438c564bce7, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
