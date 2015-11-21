@@ -29,6 +29,7 @@ public class PlayerControl : MonoBehaviour
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		//anim = GetComponent<Animator>();
+		Screen.SetResolution(384, 216, true, 60);
 	}
 
 
