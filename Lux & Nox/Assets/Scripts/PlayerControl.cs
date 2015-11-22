@@ -14,6 +14,7 @@ public class PlayerControl : MonoBehaviour
 	public bool dashLeft = false;				// Condition for whether the player should dash.
 	[HideInInspector]
 	public bool dashRight = false;				// Condition for whether the player should dash.
+	public bool isDashing = false;
 	
 	[SerializeField]
 	private float dashCooldownRate = 0.5f;	// Cooldown for dashes.
@@ -68,6 +69,7 @@ public class PlayerControl : MonoBehaviour
 		} else {
 			Physics2D.IgnoreLayerCollision (gameObject.layer, LayerMask.NameToLayer ("Platform"), false);
 		}*/
+		isDashing = dashLeft || dashRight || (dashTimeStamp != 0 && dashTimeStamp < 0.5);
 	}
 
 
@@ -81,7 +83,7 @@ public class PlayerControl : MonoBehaviour
 	
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if (/*(h * GetComponent<Rigidbody2D> ().velocity.x <= maxSpeed)*/ Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) <= maxSpeed /*&& (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)*/) {
+		if (/*(h * GetComponent<Rigidbody2D> ().velocity.x <= maxSpeed)*/Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) <= maxSpeed /*&& (Mathf.Abs (h) > 0.30f) && (!dashLeft) && (!dashRight)*/) {
 			// ... add a force to the player.
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.right * h * moveForce);
 		}
@@ -119,7 +121,7 @@ public class PlayerControl : MonoBehaviour
 					dashTimeStamp = Time.time;
 					//airDashesRemaining--;
 					// Add a force to the player aiming for the mouse position.
-					GetComponent<Rigidbody2D>().AddForce(new Vector2 (- dashForce, 0), ForceMode2D.Impulse);
+					GetComponent<Rigidbody2D>().AddForce(new Vector2 (-dashForce, 0), ForceMode2D.Force);
 				} else {
 					dashLeft = false;
 				}
@@ -130,7 +132,7 @@ public class PlayerControl : MonoBehaviour
 					dashTimeStamp = Time.time;
 					//airDashesRemaining--;
 					// Add a force to the player aiming for the mouse position.
-					GetComponent<Rigidbody2D>().AddForce(new Vector2 (dashForce, 0), ForceMode2D.Impulse);
+					GetComponent<Rigidbody2D>().AddForce(new Vector2 (dashForce, 0), ForceMode2D.Force);
 				} else {
 					dashRight = false;
 				}
@@ -141,7 +143,7 @@ public class PlayerControl : MonoBehaviour
 			if(dashTimeStamp + dashCooldownRate < Time.time) {
 				dashTimeStamp = Time.time;
 				// Add a force to the player aiming for the mouse position.
-				GetComponent<Rigidbody2D>().AddForce (new Vector2 (- dashForce, 0), ForceMode2D.Impulse);
+				GetComponent<Rigidbody2D>().AddForce (new Vector2 (-dashForce, 0), ForceMode2D.Impulse);
 			} else {
 				dashLeft = false;
 			}
