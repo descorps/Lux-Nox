@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-	public string HorizontalKey, JumpKey, DashLeftKey, DashRightKey, VerticalKey;
+	public string HorizontalKey, JumpKey, DashLeftKey, DashRightKey, VerticalKey, StartKey, EscKey;
     
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
@@ -64,7 +64,10 @@ public class PlayerControl : MonoBehaviour
 			dashLeft = true;
 		if (Input.GetButtonDown(DashRightKey)) 
 			dashRight = true;
-
+		if (Input.GetButtonDown (StartKey) && Time.timeScale == 0) {
+			Application.LoadLevel (0);
+			Time.timeScale = 1;
+		}
 		/*if (Input.GetAxis (VerticalKey) < 0) {
 			Physics2D.IgnoreLayerCollision (gameObject.layer, LayerMask.NameToLayer ("Platform"), true);
 		} else {

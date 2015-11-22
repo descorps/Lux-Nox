@@ -57,12 +57,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450364}
-  - 114: {fileID: 11419076}
-  - 50: {fileID: 5063788}
-  - 58: {fileID: 5873288}
   - 114: {fileID: 11440204}
-  - 114: {fileID: 11446506}
-  - 114: {fileID: 11472334}
+  - 114: {fileID: 11475742}
+  - 50: {fileID: 5047256}
+  - 58: {fileID: 5844212}
+  - 114: {fileID: 11420492}
+  - 114: {fileID: 11496494}
   m_Layer: 14
   m_Name: Nox
   m_TagString: Player
@@ -150,7 +150,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 450364}
   m_RootOrder: 2
---- !u!50 &5063788
+--- !u!50 &5047256
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -166,6 +166,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &5844212
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173620}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .5
 --- !u!58 &5853878
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -175,19 +188,6 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: .5
---- !u!58 &5873288
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173620}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -241,7 +241,46 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11419076
+--- !u!114 &11420492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a6665f17eb7ec429fc63435fd989f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  traceChecker: {fileID: 160446}
+  trace: {fileID: 189638, guid: 33802c5cd7e1b5647bfa21d9f71017de, type: 2}
+--- !u!114 &11440204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dc16ece6fe58741b2d95afecd4f1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: 1
+  winScreen: {fileID: 0}
+--- !u!114 &11453138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03537174c31aebd4095b896e5a47dd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashLeftForce: {x: -5000, y: 500}
+  dashRightForce: {x: 5000, y: 500}
+--- !u!114 &11475742
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -257,6 +296,8 @@ MonoBehaviour:
   DashLeftKey: LeftDash1
   DashRightKey: RightDash1
   VerticalKey: 
+  StartKey: Start1
+  EscKey: 
   facingRight: 1
   jump: 0
   dashLeft: 0
@@ -271,45 +312,7 @@ MonoBehaviour:
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
---- !u!114 &11440204
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17dc16ece6fe58741b2d95afecd4f1af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerName: 1
---- !u!114 &11446506
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a6665f17eb7ec429fc63435fd989f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  traceChecker: {fileID: 160446}
-  trace: {fileID: 189638, guid: 33802c5cd7e1b5647bfa21d9f71017de, type: 2}
---- !u!114 &11453138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03537174c31aebd4095b896e5a47dd1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashLeftForce: {x: -5000, y: 500}
-  dashRightForce: {x: 5000, y: 500}
---- !u!114 &11472334
+--- !u!114 &11496494
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

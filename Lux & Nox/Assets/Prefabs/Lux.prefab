@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 0
+  winScreen: {fileID: 0}
 --- !u!114 &11451774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,6 +282,8 @@ MonoBehaviour:
   DashLeftKey: LeftDash2
   DashRightKey: RightDash2
   VerticalKey: 
+  StartKey: Start2
+  EscKey: 
   facingRight: 1
   jump: 0
   dashLeft: 0
