@@ -9,9 +9,9 @@ public class collisionDash : MonoBehaviour {
 		if (transform.parent.GetComponent<PlayerControl>().isDashing && other.tag == "Player"){
 			Item playerItem = transform.parent.GetComponentInChildren<Item> ();
 			Item otherItem = other.GetComponentInChildren<Item> ();
-			if(playerItem == null) {
+			if(playerItem == null || otherItem == null) {
 			}
-			else if (playerItem.itemType == ItemType.FAKEOBJECT && otherItem != null) {
+			else if (playerItem.itemType == ItemType.FAKEOBJECT) {
 				if(transform.parent.GetComponent<PlayerControl>().dashLeft)
 					otherItem.transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(dashLeftForce);
 				else
@@ -20,8 +20,11 @@ public class collisionDash : MonoBehaviour {
 				playerItem.transform.localScale *= 1.5f;
 				otherItem.transform.parent = transform.parent.transform;
 				otherItem.transform.localPosition = new Vector3 (0, 0.8f, 0);
+                if (otherItem.itemType == ItemType.TOPOBJECT) {
+                    if (transform.parent.name == "Lux") MusicManager.Lux(); else MusicManager.Nox();
+                }
 			} 
-			else if (playerItem.itemType == ItemType.TOPOBJECT && otherItem != null) {
+			else if (playerItem.itemType == ItemType.TOPOBJECT) {
 				if(transform.parent.GetComponent<PlayerControl>().dashLeft)
 					otherItem.transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(dashLeftForce);
 				else
