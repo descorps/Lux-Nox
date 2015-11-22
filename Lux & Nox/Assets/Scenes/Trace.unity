@@ -702,6 +702,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11463528, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: dashLeftForce.x
+      value: -5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463528, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: dashLeftForce.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463528, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: dashRightForce.x
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463528, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: dashRightForce.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898942, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: m_Radius
+      value: .800000012
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
   m_IsPrefabParent: 0
@@ -822,6 +842,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22472802, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 143076, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1353,6 +1377,26 @@ Prefab:
     - target: {fileID: 450364, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453138, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: dashLeftForce.x
+      value: -5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453138, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: dashRightForce.x
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453138, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: dashLeftForce.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453138, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: dashRightForce.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853878, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: m_Radius
+      value: .800000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
