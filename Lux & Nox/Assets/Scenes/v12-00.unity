@@ -1062,6 +1062,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11458666, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: DashKey
+      value: Dash2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458666, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: LeftDashKey
+      value: LeftDash2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458666, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
+      propertyPath: RightDashKey
+      value: RightDash2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 581a9577ec5cb51478ce0d42d879f5f2, type: 2}
   m_IsPrefabParent: 0
@@ -2060,6 +2072,18 @@ Prefab:
     - target: {fileID: 450364, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475742, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: DashKey
+      value: Dash1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475742, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: LeftDashKey
+      value: LeftDash1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475742, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
+      propertyPath: RightDashKey
+      value: RightDash1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
