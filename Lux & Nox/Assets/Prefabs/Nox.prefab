@@ -593,10 +593,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalKey: Horizontal1
   JumpKey: Jump1
-  DashLeftKey: LeftDash1
-  DashRightKey: RightDash1
+  DashKey: Dash1
+  LeftDashKey: LeftDash1
+  RightDashKey: RightDash1
   VerticalKey: 
-  StartKey: Start1
+  StartKey: Start2
   EscKey: ESC
   facingRight: 1
   jump: 0

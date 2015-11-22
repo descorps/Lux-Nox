@@ -49,7 +49,7 @@ public class Camera2P : MonoBehaviour {
 	}
 
 	void Start() {
-		Camera.main.orthographicSize = sizeMin;
+		// Camera.main.orthographicSize = sizeMin;
 	}
 
 	void FixedUpdate ()
