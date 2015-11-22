@@ -10,7 +10,7 @@ public class Camera2P : MonoBehaviour {
 
 	Vector3 middle;
 
-	public float xMargin = 10f;		// Distance delimiting the borders of the camera relatively to the players' positions
+	public float xMargin = 5f;		// Distance delimiting the borders of the camera relatively to the players' positions
 	public float xSmooth = 2f;		// How smoothly the camera catches up with it's target movement in the x axis.
 	public Vector2 maxXAndY;		// The maximum x and y coordinates the camera can have.
 	public Vector2 minXAndY;		// The minimum x and y coordinates the camera can have.
