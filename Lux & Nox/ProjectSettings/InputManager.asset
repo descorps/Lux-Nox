@@ -70,6 +70,22 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
+    m_Name: Dash1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: joystick 1 button 2
+    positiveButton: 
+    altNegativeButton: left shift
+    altPositiveButton: 
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
     m_Name: LeftDash1
     descriptiveName: 
     descriptiveNegativeName: 
@@ -102,6 +118,22 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
+    m_Name: Dash2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: joystick 2 button 2
+    positiveButton: 
+    altNegativeButton: right shift
+    altPositiveButton: 
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
     m_Name: LeftDash2
     descriptiveName: 
     descriptiveNegativeName: 
@@ -125,9 +157,9 @@ InputManager:
     positiveButton: 
     altNegativeButton: '[6]'
     altPositiveButton: 
-    gravity: 3
+    gravity: 1000
     dead: .00100000005
-    sensitivity: 3
+    sensitivity: 1000
     snap: 0
     invert: 0
     type: 0

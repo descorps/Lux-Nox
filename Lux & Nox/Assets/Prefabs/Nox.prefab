@@ -32,6 +32,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &146516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 447632}
+  - 58: {fileID: 5834688}
+  m_Layer: 10
+  m_Name: dashChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &160446
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +141,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 450364}
   m_RootOrder: 1
+--- !u!4 &447632
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 450364}
+  m_RootOrder: 4
 --- !u!4 &450364
 Transform:
   m_ObjectHideFlags: 1
@@ -132,13 +160,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.71999979, y: -7.13999987, z: -1}
+  m_LocalPosition: {x: 6.71999979, y: -2.4000001, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415436}
   - {fileID: 418680}
   - {fileID: 497150}
   - {fileID: 402260}
+  - {fileID: 447632}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &497150
@@ -169,6 +198,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &5834688
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146516}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .800000012
 --- !u!58 &5853878
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -397,8 +439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalKey: Horizontal1
   JumpKey: Jump1
-  DashLeftKey: LeftDash1
-  DashRightKey: RightDash1
+  DashKey: Dash1
+  LeftDashKey: LeftDash1
+  RightDashKey: RightDash1
   VerticalKey: 
   facingRight: 1
   jump: 0

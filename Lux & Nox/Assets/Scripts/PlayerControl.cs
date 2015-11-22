@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-	public string HorizontalKey, JumpKey, DashLeftKey, DashRightKey, VerticalKey;
+	public string HorizontalKey, JumpKey, DashKey, LeftDashKey, RightDashKey, VerticalKey;
     
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
@@ -62,9 +62,9 @@ public class PlayerControl : MonoBehaviour
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if(Input.GetButtonDown(JumpKey) && grounded)
 			jump = true;
-		if (Input.GetButtonDown(DashLeftKey)) 
+		if (Input.GetButtonDown(LeftDashKey) || (Input.GetButtonDown(DashKey) && Input.GetAxis(HorizontalKey) < 0))
 			dashLeft = true;
-		if (Input.GetButtonDown(DashRightKey)) 
+		if (Input.GetButtonDown(RightDashKey) || (Input.GetButtonDown(DashKey) && Input.GetAxis(HorizontalKey) > 0))
 			dashRight = true;
 
 		/*if (Input.GetAxis (VerticalKey) < 0) {
