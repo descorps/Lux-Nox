@@ -191,7 +191,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: .800000012
 --- !u!95 &9572128
 Animator:
   serializedVersion: 3
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36955317396a9f48b0041191de2012b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: .0149999997
+  speedFactor: .0199999996
 --- !u!114 &11458666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,13 +280,14 @@ MonoBehaviour:
   JumpKey: Jump2
   DashLeftKey: LeftDash2
   DashRightKey: RightDash2
+  VerticalKey: 
   facingRight: 1
   jump: 0
   dashLeft: 0
   dashRight: 0
   dashCooldownRate: .800000012
   dashForce: 85
-  moveForce: 365
+  moveForce: 450
   maxSpeed: 5
   jumpClips: []
   jumpForce: 750
@@ -304,6 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03537174c31aebd4095b896e5a47dd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashLeftForce: {x: -5000, y: 500}
+  dashRightForce: {x: 5000, y: 500}
 --- !u!114 &11470146
 MonoBehaviour:
   m_ObjectHideFlags: 1
