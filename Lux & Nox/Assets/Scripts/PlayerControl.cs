@@ -36,17 +36,18 @@ public class PlayerControl : MonoBehaviour
 
 	//private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
-	private bool grounded = false;			// Whether or not the player is grounded.
-	//private Animator anim;					// Reference to the player's animator component.
-     
+	private bool grounded = false;          // Whether or not the player is grounded.
+                                            //private Animator anim;					// Reference to the player's animator component.
+    ImaginarySpeed imaginarySpeed;
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
-		//anim = GetComponent<Animator>();
-		//Screen.SetResolution(384, 216, true, 60);
-	}
+        imaginarySpeed = GetComponent<ImaginarySpeed>();
+        //anim = GetComponent<Animator>();
+        //Screen.SetResolution(384, 216, true, 60);
+    }
 
 
 	void Update()
@@ -165,10 +166,29 @@ public class PlayerControl : MonoBehaviour
 		else if(h < 0 && facingRight)
 			// ... flip the player.
 			Flip();
-	}
+
+        // Dash with high speed : take object control
+        /*
+        if (imaginarySpeed.enabled && (dashLeft || dashRight)) {
+            RaycastHit2D hit = Physics2D.Raycast(
+                transform.position + (dashRight ? Vector3.right : Vector3.left),
+                (GetComponent<Rigidbody2D>().velocity + (GetComponent<Rigidbody2D>().velocity*imaginarySpeed.SpeedFactor)) * Time.fixedDeltaTime,
+                (GetComponent<Rigidbody2D>().velocity * Time.fixedDeltaTime).magnitude,
+                LayerMask.GetMask("Dash")
+            );
+            if (hit.collider != null) {
+                GetComponentInChildren<collisionDash>().OnTriggerEnter2D(hit.collider.gameObject.transform.parent.GetComponent<Collider2D>());
+                Debug.Log(hit.collider.gameObject.transform.parent.tag);
+                // hit.collider.gameObject.transform.parent.GetComponentInChildren<collisionDash>().OnTriggerEnter2D();
+            } else {
+                Debug.Log("No collider");
+            }
+        }
+        */
+    }
 
 
-	void Flip ()
+    void Flip ()
 	{
 		// Switch the way the player is labelled as facing.
 		facingRight = !facingRight;
