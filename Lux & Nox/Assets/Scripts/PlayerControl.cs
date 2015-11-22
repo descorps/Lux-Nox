@@ -68,7 +68,7 @@ public class PlayerControl : MonoBehaviour
 			dashRight = true;
         if (Input.GetButtonDown(StartKey) && Time.timeScale == 0) {
             Time.timeScale = 1;
-            Application.LoadLevel(Application.loadedLevel);
+            Application.LoadLevel(0);
             Time.timeScale = 1;
         }
         if (Input.GetButtonDown(EscKey) && Time.timeScale == 0) {

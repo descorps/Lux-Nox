@@ -39,7 +39,7 @@ public class Camera2P : MonoBehaviour {
 		if (Mathf.Abs (player1.position.x - player2.position.x) <= distanceMax)
 			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,
 			                                          sizeMin,
-			                                          - xSmooth * Time.deltaTime);
+			                                          xSmooth * Time.deltaTime);
 		// ... the target x coordinate should be a Lerp between the camera's current x position and the player's current x position.
 		else
 			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,
@@ -49,7 +49,7 @@ public class Camera2P : MonoBehaviour {
 	}
 
 	void Start() {
-		// Camera.main.orthographicSize = sizeMin;
+		Camera.main.orthographicSize = 50;
 	}
 
 	void FixedUpdate ()

@@ -16,8 +16,8 @@ public class BackgroundManager : MonoBehaviour {
         time = timeAnim;
 
         // TODO: when object is recupered under timeAnim ms
-        nextAlpha = next.GetComponent<SpriteRenderer>().material.color.a;
-        currentAlpha = current.GetComponent<SpriteRenderer>().material.color.a;
+        // nextAlpha = next.GetComponent<SpriteRenderer>().material.color.a;
+        // currentAlpha = current.GetComponent<SpriteRenderer>().material.color.a;
     }
     void Update() {
         if (next != null) {
