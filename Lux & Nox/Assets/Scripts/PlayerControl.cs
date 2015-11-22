@@ -125,6 +125,7 @@ public class PlayerControl : MonoBehaviour
 					//airDashesRemaining--;
 					// Add a force to the player aiming for the mouse position.
 					GetComponent<Rigidbody2D>().AddForce(new Vector2 (-dashForce, 0), ForceMode2D.Force);
+                    soundLauncher.Dash();
 				} else {
 					dashLeft = false;
 				}
@@ -136,7 +137,8 @@ public class PlayerControl : MonoBehaviour
 					//airDashesRemaining--;
 					// Add a force to the player aiming for the mouse position.
 					GetComponent<Rigidbody2D>().AddForce(new Vector2 (dashForce, 0), ForceMode2D.Force);
-				} else {
+                    soundLauncher.Dash();
+                } else {
 					dashRight = false;
 				}
 			}
@@ -147,7 +149,8 @@ public class PlayerControl : MonoBehaviour
 				dashTimeStamp = Time.time;
 				// Add a force to the player aiming for the mouse position.
 				GetComponent<Rigidbody2D>().AddForce (new Vector2 (-dashForce, 0), ForceMode2D.Impulse);
-			} else {
+                soundLauncher.Dash();
+            } else {
 				dashLeft = false;
 			}
 		}
@@ -157,7 +160,8 @@ public class PlayerControl : MonoBehaviour
 				dashTimeStamp = Time.time;
 				// Add a force to the player aiming for the mouse position.
 				GetComponent<Rigidbody2D>().AddForce (new Vector2 (dashForce, 0), ForceMode2D.Impulse);
-			} else {
+                soundLauncher.Dash();
+            } else {
 				dashRight = false;
 			}
 		}
