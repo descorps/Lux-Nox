@@ -14,7 +14,7 @@ public class Scoring : MonoBehaviour {
 			slider = GameObject.Find ("SliderLux").GetComponent<Slider>();
 		else if (playerName == PlayerName.NOX)
 			slider = GameObject.Find ("SliderNox").GetComponent<Slider>();
-		slider.maxValue = 10;
+		slider.maxValue = 100;
 		slider.value = 0;
 	}
 	

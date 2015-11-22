@@ -17,7 +17,7 @@ public class collisionDash : MonoBehaviour {
 				else
 					otherItem.transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(dashRightForce);
 				playerItem.transform.parent = null;
-				playerItem.transform.localScale *= 2;
+				playerItem.transform.localScale *= 1.5f;
 				otherItem.transform.parent = transform.parent.transform;
 				otherItem.transform.localPosition = new Vector3 (0, 0.8f, 0);
 			} 
@@ -27,7 +27,7 @@ public class collisionDash : MonoBehaviour {
 				else
 					otherItem.transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(dashRightForce);
 				otherItem.transform.parent = null;
-				otherItem.transform.localScale *= 2;
+				otherItem.transform.localScale *= 1.5f;
 			}
 		}
 

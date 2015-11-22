@@ -11,13 +11,13 @@ public class Collect : MonoBehaviour {
 			if (playerItem == null) {
 				transform.parent = other.gameObject.transform;
 				transform.localPosition = new Vector3 (0, 0.8f, 0);
-				transform.localScale *= 0.5f;
+				transform.localScale /= 1.5f;
 			} else if (playerItem.itemType == ItemType.FAKEOBJECT && item.itemType == ItemType.TOPOBJECT) {
 				playerItem.transform.parent = null;
-				playerItem.transform.localScale *= 2;
+				playerItem.transform.localScale *= 1.5f;
 				transform.parent = other.gameObject.transform;
 				transform.localPosition = new Vector3 (0, 0.8f, 0);
-				transform.localScale *= 0.5f;
+				transform.localScale /= 1.5f;
 			}
 		} 
 		/*else if (other.gameObject.tag == "Player" && transform.parent != null)
