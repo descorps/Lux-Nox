@@ -6,11 +6,11 @@ public class BackgroundManager : MonoBehaviour {
     GameObject current, next;
     void OnEnable() { MusicManager.OnIdle += OnIdle; MusicManager.OnLux += OnLux; MusicManager.OnNox += OnNox; }
     void Start() { current = lux; time = 0; }
-    void OnIdle() { Change(idle); }
-    void OnLux() { Change(lux); }
-    void OnNox() { Change(nox); }
+    void OnIdle() { if (current != idle) Change(idle); }
+    void OnLux() { if (current != lux) Change(lux); }
+    void OnNox() { if (current != nox) Change(nox); }
     void Change(GameObject next) {
-        next.GetComponent<SpriteRenderer>().sortingOrder = -1;
+        next.GetComponent<SpriteRenderer>().sortingOrder = -2;
         next.SetActive(true);
         this.next = next;
         time = timeAnim;
@@ -29,7 +29,7 @@ public class BackgroundManager : MonoBehaviour {
             current.GetComponent<SpriteRenderer>().material.color = new Color(cc.r, cc.g, cc.b, (time / timeAnim));
             next.GetComponent<SpriteRenderer>().material.color = new Color(cn.r, cn.g, cn.b, ((timeAnim - time) / timeAnim));
 
-            if (time == 0) { current.SetActive(false); current = next; next = null; current.GetComponent<SpriteRenderer>().sortingOrder = 0; }
+            if (time == 0) { current.SetActive(false); current = next; next = null; current.GetComponent<SpriteRenderer>().sortingOrder = -1; }
         }
     }
 }
