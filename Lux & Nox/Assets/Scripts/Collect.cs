@@ -13,7 +13,12 @@ public class Collect : MonoBehaviour {
 				transform.parent = other.gameObject.transform;
 				transform.localPosition = new Vector3 (0, 0.8f, 0);
 				transform.localScale /= 1.5f;
-                if (item.itemType == ItemType.FAKEOBJECT) soundLauncher.CollectFake(); else soundLauncher.CollectTop();
+                if (item.itemType == ItemType.FAKEOBJECT) {
+                    soundLauncher.CollectFake();
+                } else {
+                    soundLauncher.CollectTop();
+                    if (other.gameObject.name == "Lux") MusicManager.Lux(); else MusicManager.Nox();
+                }
 			} else if (playerItem.itemType == ItemType.FAKEOBJECT && item.itemType == ItemType.TOPOBJECT) {
 				playerItem.transform.parent = null;
 				playerItem.transform.localScale *= 1.5f;
@@ -21,6 +26,7 @@ public class Collect : MonoBehaviour {
 				transform.localPosition = new Vector3 (0, 0.8f, 0);
 				transform.localScale /= 1.5f;
                 soundLauncher.CollectTop();
+                if (other.gameObject.name == "Lux") MusicManager.Lux(); else MusicManager.Nox();
             }
 		} 
 		/*else if (other.gameObject.tag == "Player" && transform.parent != null)
