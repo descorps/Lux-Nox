@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2375694}
   - 61: {fileID: 6153390}
   - 251: {fileID: 25103630}
+  - 68: {fileID: 6858326}
   m_Layer: 12
   m_Name: Balcon
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.3400002, y: -5.40999985, z: -1}
+  m_LocalPosition: {x: 22.4099998, y: -5.1500001, z: -1}
   m_LocalScale: {x: 2.25158381, y: .543906033, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,13 +69,27 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_Offset: {x: 1.1920929e-07, y: 0}
   serializedVersion: 2
   m_Size: {x: .99999994, y: 1}
+--- !u!68 &6858326
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138480}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
 --- !u!251 &25103630
 PlatformEffector2D:
   m_ObjectHideFlags: 1
@@ -87,10 +102,10 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_UseOneWay: 1
-  m_SurfaceArc: 180
+  m_SurfaceArc: 90
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 1
+  m_SideArc: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
