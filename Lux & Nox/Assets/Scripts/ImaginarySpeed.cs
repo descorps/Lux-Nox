@@ -4,6 +4,7 @@ public class ImaginarySpeed : MonoBehaviour {
 
     [SerializeField]
     float speedFactor;
+    public float SpeedFactor { get { return speedFactor; } }
 
     Collider2D collider2D;
     Rigidbody2D rigidbody2D;

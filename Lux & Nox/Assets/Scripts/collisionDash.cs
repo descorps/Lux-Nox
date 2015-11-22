@@ -1,14 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class collisionDash : MonoBehaviour {
 	[SerializeField]
-	private Vector2 dashLeftForce, dashRightForce;
+	private Vector2 dashLeftForce = new Vector2(-5000,500), dashRightForce = new Vector2(5000,500);
 
-	public void OnTriggerEnter2D(Collider2D other) {
-		if ((transform.parent.GetComponent<PlayerControl>().dashLeft 
-		     || transform.parent.GetComponent<PlayerControl>().dashRight) 
-		    && other.tag == "Player"){
+	public void OnTriggerEnterOrExit2D(Collider2D other) {
+		if (transform.parent.GetComponent<PlayerControl>().isDashing && other.tag == "Player"){
 			Item playerItem = transform.parent.GetComponentInChildren<Item> ();
 			Item otherItem = other.GetComponentInChildren<Item> ();
 			if(playerItem == null) {
@@ -31,7 +29,15 @@ public class collisionDash : MonoBehaviour {
 				otherItem.transform.parent = null;
 				otherItem.transform.localScale *= 2;
 			}
-		} 
+		}
+
+	}
+
+	public void OnTriggerEnter2D(Collider2D other) {
+		OnTriggerEnterOrExit2D(other);
+	}
+	public void OnTriggerExit2D(Collider2D other) {
+		OnTriggerEnterOrExit2D(other);
 	}
 
 	// Use this for initialization
