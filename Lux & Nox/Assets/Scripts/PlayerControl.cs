@@ -40,12 +40,14 @@ public class PlayerControl : MonoBehaviour
 	private bool grounded = false;          // Whether or not the player is grounded.
                                             //private Animator anim;					// Reference to the player's animator component.
     ImaginarySpeed imaginarySpeed;
+    SoundLauncher soundLauncher;
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
         imaginarySpeed = GetComponent<ImaginarySpeed>();
+        soundLauncher = GetComponent<SoundLauncher>();
         //anim = GetComponent<Animator>();
         //Screen.SetResolution(384, 216, true, 60);
     }
@@ -103,16 +105,16 @@ public class PlayerControl : MonoBehaviour
 		// If the player should jump...
 		if(jump && GetComponent<Rigidbody2D>().velocity.y == 0)
 		{
-			// Set the Jump animator trigger parameter.
-			//anim.SetTrigger("Jump");
-			
-			// Play a random jump audio clip.
-			//int i = Random.Range(0, jumpClips.Length);
-			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+            // Set the Jump animator trigger parameter.
+            //anim.SetTrigger("Jump");
 
+            // Play a random jump audio clip.
+            //int i = Random.Range(0, jumpClips.Length);
+            //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+            soundLauncher.Jump();
 
-			// Add a vertical force to the player.
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce * h, jumpForce));
+            // Add a vertical force to the player.
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce * h, jumpForce));
 
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
