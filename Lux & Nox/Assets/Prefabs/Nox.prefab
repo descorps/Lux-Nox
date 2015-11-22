@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.71999979, y: -2.4000001, z: -1}
+  m_LocalPosition: {x: 6.71999979, y: -7.13999987, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415436}
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &5853878
 CircleCollider2D:
@@ -178,7 +178,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .800000012
+  m_Radius: .5
 --- !u!58 &5873288
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -261,6 +261,7 @@ MonoBehaviour:
   jump: 0
   dashLeft: 0
   dashRight: 0
+  isDashing: 0
   dashCooldownRate: .800000012
   dashForce: 85
   moveForce: 450

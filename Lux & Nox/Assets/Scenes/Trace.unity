@@ -504,11 +504,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 459774, guid: 8d1f978516dc736478637c81a9311c24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.76999998
+      value: -3.22000003
       objectReference: {fileID: 0}
     - target: {fileID: 459774, guid: 8d1f978516dc736478637c81a9311c24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.46000004
+      value: -1.65999997
       objectReference: {fileID: 0}
     - target: {fileID: 459774, guid: 8d1f978516dc736478637c81a9311c24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -533,14 +533,6 @@ Prefab:
     - target: {fileID: 459774, guid: 8d1f978516dc736478637c81a9311c24, type: 2}
       propertyPath: m_RootOrder
       value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 401812, guid: 8d1f978516dc736478637c81a9311c24, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.01999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 401812, guid: 8d1f978516dc736478637c81a9311c24, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -.74000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d1f978516dc736478637c81a9311c24, type: 2}
@@ -758,23 +750,23 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22488026, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .377999991
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22488026, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22487884, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMin.x
-      value: .377999991
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22487884, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .377999991
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22487884, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22441608, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_LocalPosition.x
@@ -850,27 +842,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22462888, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .592000008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22462888, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22472802, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMin.x
-      value: .592000008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22472802, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .592000008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22472802, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 143076, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8f6d6580788c2740ac1a546463e7e79, type: 2}
@@ -1380,7 +1372,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 450364, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.4000001
+      value: -7.13999987
       objectReference: {fileID: 0}
     - target: {fileID: 450364, guid: b98a461ea45ad7e4b8a1bd338b41c44d, type: 2}
       propertyPath: m_LocalPosition.z
