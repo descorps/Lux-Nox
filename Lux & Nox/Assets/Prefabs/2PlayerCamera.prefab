@@ -93,7 +93,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   player2: {fileID: 0}
-  minSizeY: 8
+  minSizeX: 18
+  minY: 0
+  minSizeXThreshold: 1.39999998
+  xMargin: 10
+  xSmooth: 2
+  maxXAndY: {x: 0, y: 0}
+  minXAndY: {x: 0, y: 0}
 --- !u!124 &12465704
 Behaviour:
   m_ObjectHideFlags: 1
