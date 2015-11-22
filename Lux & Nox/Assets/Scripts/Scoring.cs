@@ -7,6 +7,9 @@ public class Scoring : MonoBehaviour {
 	private Slider slider;
 	[SerializeField]
 	private PlayerName playerName;
+	
+	[SerializeField]
+	private Canvas winScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,10 @@ public class Scoring : MonoBehaviour {
 		if (playerItem != null && playerItem.itemType == ItemType.TOPOBJECT) {
 			float vps = playerItem.valuePerSecond;
 			slider.value += vps * Time.deltaTime;
+		}
+		if (slider.value == slider.maxValue) {
+			Time.timeScale = 0f;
+			winScreen.gameObject.SetActive(true);
 		}
 
 	}

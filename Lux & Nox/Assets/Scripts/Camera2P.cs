@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Camera2P : MonoBehaviour {
 
@@ -6,13 +6,13 @@ public class Camera2P : MonoBehaviour {
     Transform player1, player2;
 
 	[SerializeField]
-	float minSizeX = 18f, minY = 0f;
+	private float minY = 0f;
 	
 	[SerializeField]
-	private float distanceMax = 7f;
+	private float distanceMax = 10f;
 
 	[SerializeField]
-	private float sizeMin = 8f;
+	private float sizeMin = 10.5f;
 
 	Vector3 middle;
 
@@ -36,14 +36,20 @@ public class Camera2P : MonoBehaviour {
 		// multiplying by 0.5, because the ortographicSize is actually half the height
 		float width = Mathf.Abs(player1.position.x - player2.position.x) * 0.5f + 2 * xMargin;
 
-		if (Mathf.Abs (player1.position.x - player2.position.x) < distanceMax)
-			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, sizeMin,- xSmooth);
+		if (Mathf.Abs (player1.position.x - player2.position.x) <= distanceMax)
+			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,
+			                                          sizeMin,
+			                                          - xSmooth * Time.deltaTime);
 		// ... the target x coordinate should be a Lerp between the camera's current x position and the player's current x position.
 		else
 			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,
-		                            Mathf.Max(width, minSizeX / 2f) * Screen.height / Screen.width, 
+		                            width * Screen.height / Screen.width, 
 		                            xSmooth * Time.deltaTime);
 
+	}
+
+	void Start() {
+		Camera.main.orthographicSize = sizeMin;
 	}
 
 	void FixedUpdate ()
