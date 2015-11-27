@@ -2,16 +2,18 @@
 
 public class BackgroundManager : MonoBehaviour {
     float time, timeAnim = .4f, nextAlpha, currentAlpha;
-    public GameObject idle, lux, nox;
-    GameObject current, next;
+    public GameObject[] idle, lux, nox;
+    GameObject[] current, next;
     void OnEnable() { MusicManager.OnIdle += OnIdle; MusicManager.OnLux += OnLux; MusicManager.OnNox += OnNox; }
-    void Start() { current = lux; time = 0; }
+    void Start() { current = idle; time = 0; }
     void OnIdle() { if (current != idle) Change(idle); }
     void OnLux() { if (current != lux) Change(lux); }
     void OnNox() { if (current != nox) Change(nox); }
-    void Change(GameObject next) {
-        next.GetComponent<SpriteRenderer>().sortingOrder = -2;
-        next.SetActive(true);
+    void Change(GameObject[] next) {
+        for (int i = 0; i < next.Length; ++i) {
+            next[i].GetComponent<SpriteRenderer>().sortingOrder = -5 - (next.Length - i);
+            next[i].SetActive(true);
+        }
         this.next = next;
         time = timeAnim;
 
@@ -23,13 +25,22 @@ public class BackgroundManager : MonoBehaviour {
         if (next != null) {
             time = Mathf.Max(0, time - Time.deltaTime);
 
-            Color cc = current.GetComponent<SpriteRenderer>().material.color;
-            Color cn = next.GetComponent<SpriteRenderer>().material.color;
+            //Color cc = current.GetComponent<SpriteRenderer>().material.color;
+            //Color cn = next.GetComponent<SpriteRenderer>().material.color;
 
-            current.GetComponent<SpriteRenderer>().material.color = new Color(cc.r, cc.g, cc.b, (time / timeAnim));
-            next.GetComponent<SpriteRenderer>().material.color = new Color(cn.r, cn.g, cn.b, ((timeAnim - time) / timeAnim));
+            for (int i = 0; i < next.Length; ++i) {
+                current[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, (time / timeAnim));
+                next[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, ((timeAnim - time) / timeAnim));
+            }
 
-            if (time == 0) { current.SetActive(false); current = next; next = null; current.GetComponent<SpriteRenderer>().sortingOrder = -1; }
+            if (time == 0) {
+                for (int i = 0; i < next.Length; ++i) {
+                    current[i].SetActive(false);
+                    next[i].GetComponent<SpriteRenderer>().sortingOrder = -1 - (next.Length - i);
+                }
+                current = next;
+                next = null;
+            }
         }
     }
 }
