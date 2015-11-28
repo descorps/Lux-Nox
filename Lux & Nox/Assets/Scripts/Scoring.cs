@@ -31,7 +31,8 @@ public class Scoring : MonoBehaviour {
 		}
 		if (slider.value == slider.maxValue) {
 			Time.timeScale = 0f;
-			winScreen.gameObject.SetActive(true);
+            MusicManager.Win();
+            winScreen.gameObject.SetActive(true);
 		}
 
 	}

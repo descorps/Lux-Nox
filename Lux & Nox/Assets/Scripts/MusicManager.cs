@@ -18,12 +18,20 @@ public class MusicManager : MonoBehaviour {
         Change(Instance.nox);
         OnNox();
     }
+    public static void Win()
+    {
+        Stop();
+    }
     static void Change(AudioSource next) {
         next.time = Instance.current.time;
         Instance.current.Stop();
         next.Play();
         Instance.current = next;
         Instance.transition.Play();
+    }
+    static void Stop()
+    {
+        Instance.current.Stop();
     }
 
     public AudioSource idle, lux, nox, transition;
