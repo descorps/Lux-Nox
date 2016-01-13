@@ -19,7 +19,7 @@ public class Scoring : MonoBehaviour {
 			slider = GameObject.Find ("SliderNox").GetComponent<Slider>();
         slider.maxValue = 50; // 100; // 50
 		slider.value = 0;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

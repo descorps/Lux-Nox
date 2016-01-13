@@ -34,9 +34,8 @@ public class PlayerControl : MonoBehaviour
 
 	private float dashTimeStamp	= 0f;		// 
 
-
-	//private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
-	private Transform groundCheck;			// A position marking where to check if the player is grounded.
+    //private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
+    private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;          // Whether or not the player is grounded.
                                             //private Animator anim;					// Reference to the player's animator component.
     ImaginarySpeed imaginarySpeed;
@@ -68,7 +67,7 @@ public class PlayerControl : MonoBehaviour
 			dashRight = true;
         if (Input.GetButtonDown(StartKey) && Time.timeScale == 0) {
             Time.timeScale = 1;
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
             Time.timeScale = 1;
         }
         if (Input.GetButtonDown(EscKey) && Time.timeScale == 0) {
